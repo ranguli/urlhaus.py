@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "urlhaus"
+version = "0.1.0"
+description = ""
+authors = ["ranguli <hello@joshmurphy.ca>"]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+click = "^7.0"
+requests = "^2.23.0"
+python-decouple = "^3.3"
+
+[tool.poetry.dev-dependencies]
+black = "^19.10b0"
+flake8 = "^3.7.9"
+pytest = "^5.3.5"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
