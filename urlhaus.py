@@ -7,6 +7,7 @@
 import re
 import sys
 from pprint import PrettyPrinter
+from urllib.parse import urlsplit, urlunsplit
 
 import requests
 import click
@@ -76,6 +77,8 @@ def main(url, file_, anon, preview_only, tags):
             urls = f.read().split("\n")
             for url in urls:
                 if validate(url, validator="url"):
+                    if not url.startswith("https://www."):
+                        url = "https://www." + url
                     submissions.append(
                         {"url": url, "threat": "malware_download", "tags":
                             submit_tags,}
